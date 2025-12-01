@@ -173,12 +173,6 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-h2 {
-  font-size: clamp(1.2rem, 20px, 1.5vw);
-  font-weight: 500;
-  margin-bottom: 15px;
-}
-
 .container {
   height: 100vh;
   display: grid;
@@ -348,12 +342,20 @@ h2 {
   background-color: #dddddd;
 }
 
+.main h2 {
+  font-size: clamp(1.2rem, 20px, 1.5vw);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
 .column-one {
   grid-column: 1 / 2;
 }
 
 .column-two {
+  display: grid;
   grid-column: 2 / 3;
+  gap: 20px;
 }
 
 .projects-container {
@@ -401,11 +403,12 @@ h2 {
   filter: opacity(0.6);
 }
 
-.row:first-child {
-  margin-bottom: 15px;
+.row:last-child {
+  align-self: end;
 }
 
-.announcements-list {
+.announcements-list,
+.trending-list {
   background-color: var(--white);
   padding: 25px;
   border-radius: 5px;
@@ -438,6 +441,22 @@ h2 {
   font-size: 12px;
 }
 
-.user img {
+.trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trending-list .user {
+  display: flex;
+  gap: 10px;
+}
+
+.trending-list .user img {
   max-width: var(--icon-medium);
+}
+
+.trending-list .user p:last-child {
+  color: var(--gray-text);
+  font-size: 14px;
 }
